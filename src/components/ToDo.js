@@ -1,4 +1,11 @@
 import React, { Component } from "react";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootswatch/dist/materia/bootstrap.min.css";
+
+import $ from "jquery";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
 import TaskList from "./TaskList";
 import AddTask from "./AddTask";
 
@@ -87,14 +94,14 @@ class ToDo extends Component {
 
   render() {
     return (
-      <>
+      <div className="container">
         <AddTask add={this.handleAdd} />
         <TaskList
           tasks={this.state.tasks}
           change={this.handleChangeStatus}
           remove={this.handleRemove}
         />
-      </>
+      </div>
     );
   }
 }
