@@ -40,27 +40,60 @@ class AddTask extends Component {
 
   render() {
     return (
-      <div>
-        <input
-          type="text"
-          value={this.state.text}
-          onChange={this.handleTextChange}
-        />
-        <input
-          type="date"
-          value={this.state.date}
-          onChange={this.handleDateChange}
-          min={this.todayDate}
-          max={this.maxDate}
-        />
-        <input
-          type="checkbox"
-          checked={this.state.important}
-          onChange={this.handleStatusChange}
-        />
-        <br />
-        <button onClick={this.handleTaskAdd}>Add new task</button>
-      </div>
+      <>
+        <div className="form-row">
+          <div className="col-sm-8">
+            <div className="form-group">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Add new task"
+                value={this.state.text}
+                onChange={this.handleTextChange}
+              />
+            </div>
+          </div>
+
+          <div className="col-sm-4">
+            <div className="form-group">
+              <input
+                type="date"
+                className="form-control"
+                value={this.state.date}
+                onChange={this.handleDateChange}
+                min={this.todayDate}
+                max={this.maxDate}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="form-row">
+          <div className="col-sm-8">
+            <div className="form-check mb-3">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="importantCheckbox"
+                checked={this.state.important}
+                onChange={this.handleStatusChange}
+              />
+              <label className="form-check-label" htmlFor="importantCheckbox">
+                Important
+              </label>
+            </div>
+          </div>
+
+          <div className="col-sm-4">
+            <button
+              className="btn btn-primary w-100"
+              onClick={this.handleTaskAdd}
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </>
     );
   }
 }
