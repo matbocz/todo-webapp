@@ -8,6 +8,7 @@ ReactJS & Bootstrap WebApp. This app allows you to create and manage your own to
 - history of completed tasks
 
 ## Live
+https://matbocz.github.io/todo-webapp/
 
 ## Local installation
 - npm install
