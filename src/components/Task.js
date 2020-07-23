@@ -5,19 +5,42 @@ const Task = (props) => {
 
   if (active) {
     return (
-      <li style={important ? { color: "red" } : null}>
-        {text} {date}
-        <button onClick={() => props.change(id)}>V</button>
-        <button onClick={() => props.remove(id)}>X</button>
+      <li
+        className={
+          important
+            ? "list-group-item d-flex justify-content-between align-items-center text-info"
+            : "list-group-item d-flex justify-content-between align-items-center"
+        }
+      >
+        {text} <br />
+        {date}
+        <span>
+          <button
+            className="btn btn-success mr-1"
+            onClick={() => props.change(id)}
+          >
+            V
+          </button>
+          <button
+            className="btn btn-warning ml-1"
+            onClick={() => props.remove(id)}
+          >
+            X
+          </button>
+        </span>
       </li>
     );
   } else {
-    const done = new Date(doneDate).toLocaleString();
+    const doneTime = new Date(doneDate).toLocaleString();
 
     return (
-      <li>
-        {text} {done}
-        <button onClick={() => props.remove(id)}>X</button>
+      <li className="list-group-item d-flex justify-content-between align-items-center">
+        {text}
+        <br />
+        {doneTime}
+        <button className="btn btn-warning" onClick={() => props.remove(id)}>
+          X
+        </button>
       </li>
     );
   }

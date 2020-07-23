@@ -31,12 +31,11 @@ const TaskList = (props) => {
   return (
     <>
       {/* Show all active tasks */}
-      <ul>{activeTasks}</ul>
-      <hr />
+      <ul className="list-group w-100 mt-3">{activeTasks}</ul>
 
       {/* Show the last 5 tasks completed */}
-      <h2>Completed tasks: {done.length}</h2>
-      <ul>{doneTasks.slice(0, 5)}</ul>
+      <h3 className="mt-3">Completed tasks: {done.length}</h3>
+      <ul className="list-group w-100">{doneTasks.slice(0, 5)}</ul>
       {done.length > 5 && (
         <p>There are {done.length - 5} more completed tasks</p>
       )}
