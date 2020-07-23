@@ -13,40 +13,7 @@ class ToDo extends Component {
   counter = 4;
 
   state = {
-    tasks: [
-      {
-        id: 0,
-        text: "Task 1",
-        important: false,
-        date: "2019-10-12",
-        doneDate: null,
-        active: true,
-      },
-      {
-        id: 1,
-        text: "Task 2",
-        important: true,
-        date: "2019-12-01",
-        doneDate: null,
-        active: true,
-      },
-      {
-        id: 2,
-        text: "Task 3",
-        important: false,
-        date: "2020-02-10",
-        doneDate: "2020-04-02",
-        active: false,
-      },
-      {
-        id: 3,
-        text: "Task 4",
-        important: true,
-        date: "2020-05-01",
-        doneDate: "2020-06-20",
-        active: false,
-      },
-    ],
+    tasks: [],
   };
 
   handleRemove = (id) => {
