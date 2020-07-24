@@ -3,8 +3,12 @@ import Task from "./Task";
 
 const TaskList = (props) => {
   // Get active and completed tasks
-  const active = props.tasks.filter((task) => task.active);
-  const done = props.tasks.filter((task) => !task.active);
+  const active = props.tasks
+    .filter((task) => task.text.indexOf(props.search) !== -1)
+    .filter((task) => task.active);
+  const done = props.tasks
+    .filter((task) => task.text.indexOf(props.search) !== -1)
+    .filter((task) => !task.active);
 
   // Sort active and completed tasks
   active.sort((a, b) => b.id - a.id);

@@ -8,12 +8,18 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 import TaskList from "./TaskList";
 import AddTask from "./AddTask";
+import Navbar from "./Navbar";
 
 class ToDo extends Component {
   counter = 4;
 
   state = {
+    search: "",
     tasks: [],
+  };
+
+  handleSearch = (e) => {
+    this.setState({ search: e.target.value });
   };
 
   handleRemove = (id) => {
@@ -61,14 +67,18 @@ class ToDo extends Component {
 
   render() {
     return (
-      <div className="container">
-        <AddTask add={this.handleAdd} />
-        <TaskList
-          tasks={this.state.tasks}
-          change={this.handleChangeStatus}
-          remove={this.handleRemove}
-        />
-      </div>
+      <>
+        <Navbar search={this.state.search} handleSearch={this.handleSearch} />
+        <div className="container">
+          <AddTask add={this.handleAdd} />
+          <TaskList
+            tasks={this.state.tasks}
+            change={this.handleChangeStatus}
+            remove={this.handleRemove}
+            search={this.state.search}
+          />
+        </div>
+      </>
     );
   }
 }
