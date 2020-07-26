@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
+
+const iconFaPlusCircle = <FontAwesomeIcon icon={faPlusCircle} />;
+
 class AddTask extends Component {
   todayDate = new Date().toISOString().slice(0, 10);
   maxDate = this.todayDate.slice(0, 4) * 1 + 2;
@@ -89,7 +94,7 @@ class AddTask extends Component {
               className="btn btn-primary w-100"
               onClick={this.handleTaskAdd}
             >
-              Add
+              {iconFaPlusCircle}
             </button>
           </div>
         </div>

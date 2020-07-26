@@ -1,5 +1,14 @@
 import React from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCheckCircle,
+  faTimesCircle,
+} from "@fortawesome/free-solid-svg-icons";
+
+const iconFaCheckCircle = <FontAwesomeIcon icon={faCheckCircle} />;
+const iconFaTimesCircle = <FontAwesomeIcon icon={faTimesCircle} />;
+
 const Task = (props) => {
   const { id, text, important, date, doneDate, active } = props.task;
 
@@ -19,13 +28,13 @@ const Task = (props) => {
             className="btn btn-success mr-1"
             onClick={() => props.change(id)}
           >
-            V
+            {iconFaCheckCircle}
           </button>
           <button
             className="btn btn-warning ml-1"
             onClick={() => props.remove(id)}
           >
-            X
+            {iconFaTimesCircle}
           </button>
         </span>
       </li>
@@ -39,7 +48,7 @@ const Task = (props) => {
         <br />
         {doneTime}
         <button className="btn btn-warning" onClick={() => props.remove(id)}>
-          X
+          {iconFaTimesCircle}
         </button>
       </li>
     );
